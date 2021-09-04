@@ -32,6 +32,17 @@ class HomeViewModel: BaseViewModel {
         let requestTrigger = Observable.merge(
             viewIsReady.asObservable())
         
+//        let getListPost = getListPost().asObservable()
+//        let getListUser = getListUser().asObservable()
+
+//        Observable
+//            .zip(getListPost, getListUser).subscribe(
+//                onCompleted: { [unowned self] in
+//                    print("ps da xong")
+//                    initalLoad.accept(())
+//                    ActivityIndicator.shared.dismiss()
+//                }).disposed(by: dispose)
+        
         requestTrigger
             .subscribe(
                 onNext: { [unowned self] _ in
@@ -39,17 +50,17 @@ class HomeViewModel: BaseViewModel {
                     listUserTrigger.accept(())
                     listCommentTrigger.accept(())
                 }).disposed(by: dispose)
-        
+
         listPostTrigger
             .flatMapLatest({ [unowned self] in getListPost() })
             .bind(to: listPost)
             .disposed(by: dispose)
-        
+
         listUserTrigger
             .flatMapLatest({ [unowned self] in getListUser() })
             .bind(to: listUser)
             .disposed(by: dispose)
-        
+
         listCommentTrigger
             .flatMapLatest({ [unowned self] in getListComment() })
             .bind(to: listComment)

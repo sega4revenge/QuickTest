@@ -19,7 +19,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hw4-iu-VgX" customClass="SelfResizeTableView" customModule="QuickTest" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Data..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qv-33-nQW">
+                    <rect key="frame" x="150" y="437.5" width="114.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hw4-iu-VgX" customClass="SelfResizeTableView" customModule="QuickTest" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="separatorColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,6 +43,8 @@
                 <constraint firstItem="Hw4-iu-VgX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VFW-5l-NLw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hw4-iu-VgX" secondAttribute="trailing" id="VQV-0P-iej"/>
                 <constraint firstItem="Hw4-iu-VgX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="W8u-IM-mq2"/>
+                <constraint firstItem="1qv-33-nQW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="d1Q-hb-yrd"/>
+                <constraint firstItem="1qv-33-nQW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mpS-OF-DhV"/>
             </constraints>
             <point key="canvasLocation" x="132" y="94"/>
         </view>

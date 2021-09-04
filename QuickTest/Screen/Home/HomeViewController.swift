@@ -13,13 +13,20 @@ class HomeViewController: BaseViewController {
     var viewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewIsReady.accept(())
+        
         configTableView()
         
-        viewModel.errorMessage .subscribe(
+        viewModel.errorMessage.subscribe(
             onNext: { [unowned self] error in
-                showAlert(title: "Error", message: error)
+                    showAlert(title: "Error", message: error)
             }).disposed(by: dispose)
+        viewModel.initalLoad.subscribe(
+            onNext: { [unowned self] _ in
+                tableView.isHidden = viewModel.listPost.value.count == 0
+                tableView.reloadData()
+            }).disposed(by: dispose)
+        
+        viewModel.viewIsReady.accept(())
         
     }
     

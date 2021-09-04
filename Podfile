@@ -10,6 +10,8 @@ end
 
 def libraryUI
   pod 'Kingfisher'
+  pod 'JGProgressHUD'
+  
 end
 
 def utils

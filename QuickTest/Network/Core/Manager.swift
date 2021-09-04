@@ -28,20 +28,10 @@ class ApiManager {
     }
     
     var session: Session = {
-        let responseCacher = ResponseCacher(behavior: .modify { _, response in
-          let userInfo = ["date": Date()]
-          return CachedURLResponse(
-            response: response.response,
-            data: response.data,
-            userInfo: userInfo,
-            storagePolicy: .allowed)
-        })
-        
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30
         configuration.timeoutIntervalForResource = 30
-        configuration.requestCachePolicy = .useProtocolCachePolicy
-        return Session(configuration: configuration, cachedResponseHandler: responseCacher)
+        return Session(configuration: configuration)
     }()
     
     var youtubeSession: Session = {
